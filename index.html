@@ -1,306 +1,407 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Didik Rahmadi</title>
+    <title>Didik Rahmadi | Portfolio</title>
+    <link rel="icon" href="https://i.ibb.co.com/m5RZWh6x/Desain-tanpa-judul.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    overflow-x: hidden;
-}
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
 
-.container {
-    width: 45%; /* Lebar untuk tampilan desktop */
-    margin: 50px auto;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    overflow: hidden;
-}
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
 
-/* Media Query untuk tampilan mobile */
-@media (max-width: 768px) {
-    .container {
-        width: 80%; /* Lebar untuk tampilan mobile */
-    }
-}
+        .glass-card:hover {
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-5px);
+        }
 
+        .gradient-text {
+            background: linear-gradient(90deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.header {
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 10px;
-}
+        .nav-link {
+            position: relative;
+        }
 
-.header h1 {
-    font-size: 36px;
-    color: #fff;
-}
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #818cf8;
+            transition: width 0.3s ease;
+        }
 
-.header .contact h2 {
-    margin: 0; /* Menghapus margin default dari heading */
-    font-size: 24px; /* Ukuran font heading */
-}
-
-.header .contact p {
-    margin: 5px 0; /* Margin untuk jarak antar paragraf */
-}
-
-.contact a {
-    color: #fff; /* Mengatur warna link di bagian contact menjadi putih */
-    text-decoration: none; /* Menghapus garis bawah pada link */
-}
-
-.contact a:hover {
-    text-decoration: underline; /* Menambahkan garis bawah saat hover */
-}
-
-
-.section {
-    margin-bottom: 30px;
-}
-
-.section h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #fff;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 5px;
-}
-
-.skills ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.skills ul li {
-    background: #3498db;
-    color: white;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    display: inline-block;
-    animation: fadeIn 1.5s ease-in-out forwards;
-    opacity: 0;
-}
-
-.skills ul li:nth-child(odd) {
-    animation-delay: 0.5s;
-}
-
-.skills ul li:nth-child(even) {
-    animation-delay: 1s;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.skills ul li:hover {
-    background: #2980b9;
-    transition: background 0.3s ease;
-}
-
-.experience .job {
-    margin-bottom: 20px;
-}
-
-.job h3 {
-    margin-bottom: 5px;
-    font-size: 22px;
-    color: #fff;
-}
-
-.job p {
-    margin-bottom: 5px;
-}
-
-/* Floating Animation */
-.floating {
-    animation: floating 5s ease-in-out infinite;
-}
-
-@keyframes floating {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.photo-container {
-    width: 150px; /* Ukuran kontainer foto */
-    height: 150px; /* Ukuran kontainer foto */
-    margin-right: 20px; /* Jarak dengan elemen di samping */
-    display: inline-block; /* Mengatur tampilan sebagai blok inline */
-    border-radius: 50%; /* Membuat kontainer menjadi lingkaran */
-    overflow: hidden; /* Memastikan konten tidak keluar dari bingkai */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Efek bayangan */
-}
-
-.photo-container img {
-    width: 100%; /* Memastikan gambar mengisi lebar kontainer */
-    height: 100%; /* Memastikan gambar mengisi tinggi kontainer */
-    object-fit: cover; /* Memastikan gambar tetap terjaga proporsinya */
-    animation: floating 5s ease-in-out infinite; /* Animasi floating */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 14px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-footer a {
-    color: #00e676; /* Hijau seperti WhatsApp */
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Media Queries untuk Responsivitas */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column; /* Mengubah arah menjadi kolom pada layar kecil */
-        align-items: center; /* Memusatkan konten secara horizontal */
-    }
-    .photo-container {
-        margin-bottom: 15px; /* Ruang di bawah foto */
-    }
-    .contact {
-        text-align: center; /* Memusatkan teks kontak pada tampilan kecil */
-        max-width: 100%; /* Membiarkan kontak mengambil seluruh lebar pada tampilan kecil */
-    }
-}
-
-@media (max-width: 480px) {
-    .photo-container {
-        width: 120px; /* Menyesuaikan ukuran foto untuk layar lebih kecil */
-        height: 120px;
-    }
-    .contact h2 {
-        font-size: 20px; /* Menyesuaikan ukuran font untuk tampilan kecil */
-    }
-    .contact p {
-        font-size: 14px; /* Menyesuaikan ukuran font untuk paragraf */
-    }
-}
-
+        .nav-link:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="photo-container">
-                <img src="https://lh3.googleusercontent.com/d/1_U6eWZ46xrngQOPvtLoj1ELx3tbCmAtV" alt="Didik Rahmadi" class="floating" style="margin-top: 5px;">
+<body class="selection:bg-indigo-500/30 selection:text-indigo-200">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-t-0 border-x-0">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter gradient-text">PORTFOLIO</div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-300">
+                <a href="#home" class="nav-link hover:text-white transition">Beranda</a>
+                <a href="#about" class="nav-link hover:text-white transition">Tentang</a>
+                <a href="#skills" class="nav-link hover:text-white transition">Keahlian</a>
+                <a href="#experience" class="nav-link hover:text-white transition">Pengalaman</a>
+                <a href="#contact" class="nav-link hover:text-white transition">Kontak</a>
             </div>
-            <div class="contact">
-                <h2>DIDIK RAHMADI</h2>
-                <p>Email: didikrahmadi@edu.jakarta.go.id</p>
-                <p>Phone: <a href="https://wa.me/6281285242527" target="_blank">+6281285242527</a></p>
-                <p>Website: <a href="https://didik-rahmadi.github.io/didikrahmadi.github.io/didik" target="_blank">https://didik-rahmadi.github.io/cv/</a></p>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-300">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-4">
+            <a href="#home" class="block text-slate-300 hover:text-white">Beranda</a>
+            <a href="#about" class="block text-slate-300 hover:text-white">Tentang</a>
+            <a href="#skills" class="block text-slate-300 hover:text-white">Keahlian</a>
+            <a href="#experience" class="block text-slate-300 hover:text-white">Pengalaman</a>
+            <a href="#contact" class="block text-slate-300 hover:text-white">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase bg-indigo-500/10 text-indigo-400 rounded-full border border-indigo-500/20">
+                Guru Pembelajar
             </div>
-        </div>
-
-        <!-- About -->
-        <div class="section about">
-            <h2>About Me</h2>
-            <p>Aku hanyalah seorang guru biasa yang suka belajar hal baru.</p>
-        </div>
-
-        <!-- Experience -->
-        <div class="section experience">
-            <h2>Karir & Pengalaman</h2>
-            <div class="job">
-                <ul>
-                    <li>2009 - 2011 : Guru Bahasa Inggris SDN Tanah Tinggi 02 Petang.</li>
-                    <li>2011 - 2015 : Guru Kelas SDN Jagakarsa 03 Pagi.</li>
-                    <li>2015 - sekarang : Guru Kelas SDN Pejaten Timur 11.</li>
-                    <li>2020 - sekarang : Wakil Kepala Sekolah Bidang Akademik SDN Pejaten Timur 11.</li>
-                    <li>2019 - 2021 : Fasilitator E-Rapor SD Kemendikbudristek.</li>
-                    <li>2019 - 2021 : Tim Sosialisasi E-Rapor SD Dinas Pendidikan Provinsi DKI Jakarta.</li>
-                    <li>2022 : Pengajar Praktik Pendidikan Guru Penggerak Angkatan 5 DKI Jakarta.</li>
-                    <li>2022 : Penulis Modul Ajar Untuk PMM Direktorat SD Kemendikbudristek (Pendidikan Pancasila - Hak & Kewajiban).</li>
-                    <li>2023 : Penulis Modul Ajar Untuk PMM Direktorat SD Kemendikbudristek (Matematika - Luas & Keliling Bangun Datar).</li>
-                    <li>2023 : Penulis Modul Projek P5 Untuk PMM Direktorat SD Kemendikbudristek (Kewirausahaan - Kecil-Kecil Jago Branding).</li>
-                    <li>2024 : Penulis Modul Pencegahan Kekerasan Seksual untuk SD (Pusat Penguatan Karakter Kemendikbudristek).</li>
-                    <li>2024 : Tim Pengembang Kurikulum Bidang SD Dinas Pendidikan Provinsi DKI Jakarta.</li>
-                    <li>2024 : Fasilitator Pendidikan Guru Penggerak Angkatan 11 Kota Semarang.</li>
-                    <li>2025 : Kreator Media Pembelajaran Interaktif untuk Ruang Murid.</li>
-                    <li>2025 : Tim Teknis e-rapor 2025 Direktorat SD Kemendikdasmen.</li>
-                    <li>2025 : Koordinator Kelas 6 Kelompok Kerja Guru Kelas Provinsi DKI Jakarta.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Skills -->
-        <div class="section skills">
-            <h2>Keahlian</h2>
-            <ul>
-                <li>Komunikasi</li>
-                <li>Data Analysis</li>
-                <li>Web Development</li>
-                <li>Pengembang Pembelajaran</li>
-            </ul>
-        </div>
-
-        <!-- Education -->
-        <div class="section education">
-            <h2>Education</h2>
-            <p><strong>S1 :</strong> Pendidikan Guru Sekolah Dasar Universitas Negeri Jakarta</p>
-        </div>
-
-        <!-- Follow Me -->
-        <div class="section follow-me">
-            <h2>Follow Me</h2>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/share/vQJPpbNG64vEkkTj/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="40" height="40">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+                Halo, Saya <span class="gradient-text">Didik Rahmadi</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed max-w-2xl mx-auto">
+                Seorang profesional yang berfokus pada solusi inovatif dan pengembangan berkelanjutan. Membangun masa depan melalui kreativitas dan dedikasi.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-semibold transition shadow-lg shadow-indigo-500/20">
+                    Hubungi Saya
                 </a>
-                <a href="https://www.instagram.com/didik.rahmadi" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="40" height="40">
-                </a>
-                <a href="https://www.youtube.com/@DidikRahmadi" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube" width="40" height="40">
-                </a>
-                <a href="https://wa.me/6281285242527" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="40" height="40">
+                <a href="https://drive.usercontent.google.com/download?id=1unxRe0JYwKMjQ635uC1y0rv_MpxLlulM&export=download&authuser=0" class="px-8 py-4 glass-card rounded-xl font-semibold hover:bg-slate-800 transition">
+                    Unduh CV <i class="fas fa-download ml-2 text-sm"></i>
                 </a>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative bg-slate-800 rounded-2xl overflow-hidden aspect-square flex items-center justify-center border border-slate-700">
+                        <img src="https://didik-rahmadi.github.io/gamedidik-bidang/assets/Foto%20Pengembang.png" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Tentang Saya</h2>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        Saya adalah seorang pendidik yang berdedikasi tinggi dengan semangat yang tak pernah padam untuk terus belajar. Saya percaya bahwa dunia pendidikan sangat dinamis, dan untuk menjadi guru yang inspiratif, seseorang harus terlebih dahulu menjadi pembelajar seumur hidup.
+                    </p>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Saya selalu antusias mengeksplorasi pengetahuan baru, wawasan terkini, dan metode pengajaran yang inovatif. Melalui proses belajar yang berkelanjutan ini, saya berkomitmen untuk selalu memberikan pengalaman belajar yang relevan, bermakna, dan berdampak positif bagi lingkungan sekitar.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-indigo-400 font-bold text-2xl">10+</p>
+                            <p class="text-sm text-slate-500">Tahun Pengalaman</p>
+                        </div>
+                        <div>
+                            <p class="text-indigo-400 font-bold text-2xl">20+</p>
+                            <p class="text-sm text-slate-500">Proyek Selesai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Keahlian Utama</h2>
+                <p class="text-slate-400">Teknologi dan kompetensi yang saya gunakan untuk mewujudkan ide.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="p-6 glass-card rounded-2xl text-center">
+                    <i class="fab fa-html5 text-4xl text-orange-500 mb-4"></i>
+                    <h3 class="font-semibold">Web Dev</h3>
+                    <p class="text-xs text-slate-500 mt-2">HTML, CSS, JS</p>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="p-6 glass-card rounded-2xl text-center">
+                    <i class="fas fa-chart-line text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-semibold">Data Analysis</h3>
+                    <p class="text-xs text-slate-500 mt-2">Excel, SQL</p>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="p-6 glass-card rounded-2xl text-center">
+                    <i class="fas fa-chalkboard-teacher text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="font-semibold">Edu Tech</h3>
+                    <p class="text-xs text-slate-500 mt-2">LMS, Media Interaktif</p>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="p-6 glass-card rounded-2xl text-center">
+                    <i class="fas fa-book-open text-4xl text-emerald-500 mb-4"></i>
+                    <h3 class="font-semibold">Desain Kurikulum</h3>
+                    <p class="text-xs text-slate-500 mt-2">Pedagogi, Silabus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6 bg-slate-900/50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Pengalaman Kerja</h2>
+            <div class="space-y-8">
+                <!-- Job 1 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-indigo-400">2009 - 2011</div>
+                    <h3 class="text-xl font-bold">Guru Bahasa Inggris</h3>
+                    <p class="text-slate-300 mb-3">SDN Tanah Tinggi 02 Petang</p>
+                </div>
+                <!-- Job 2 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2011 - 2015</div>
+                    <h3 class="text-xl font-bold">Guru Kelas</h3>
+                    <p class="text-slate-300 mb-3">SDN Jagakarsa 03 Pagi</p>
+                </div>
+                <!-- Job 3 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2015 - sekarang</div>
+                    <h3 class="text-xl font-bold">Guru Kelas</h3>
+                    <p class="text-slate-300 mb-3">SDN Pejaten Timur 11</p>
+                </div>
+                <!-- Job 4 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2019</div>
+                    <h3 class="text-xl font-bold">Fasilitator E-Rapor SD</h3>
+                    <p class="text-slate-300 mb-3">Kemendikbudristek</p>
+                </div>
+                <!-- Job 5 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2019</div>
+                    <h3 class="text-xl font-bold">Tim Sosialisasi E-Rapor SD</h3>
+                    <p class="text-slate-300 mb-3">Dinas Pendidikan Provinsi DKI Jakarta</p>
+                </div>
+                <!-- Job 6 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2020 - sekarang</div>
+                    <h3 class="text-xl font-bold">Wakil Kepala Sekolah Bidang Akademik</h3>
+                    <p class="text-slate-300 mb-3">SDN Pejaten Timur 11</p>
+                </div>
+                <!-- Job 7 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2022</div>
+                    <h3 class="text-xl font-bold">Pengajar Praktik Pendidikan Guru Penggerak Angkatan 5 DKI Jakarta</h3>
+                    <p class="text-slate-300 mb-3">BBGP Yogyakarta - Kemendikbudristek</p>
+                </div>
+                <!-- Job 8 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2022 - 2023</div>
+                    <h3 class="text-xl font-bold">Penulis Modul Ajar Untuk PMM</h3>
+                    <p class="text-slate-300 mb-3">Direktorat SD - Kemendikbudristek</p>
+                </div>
+                <!-- Job 9 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2023</div>
+                    <h3 class="text-xl font-bold">Penulis Modul Projek P5 Untuk PMM</h3>
+                    <p class="text-slate-300 mb-3">Direktorat SD - Kemendikbudristek</p>
+                </div>
+                <!-- Job 10 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2024</div>
+                    <h3 class="text-xl font-bold">Penulis Modul Pencegahan Kekerasan Seksual untuk SD</h3>
+                    <p class="text-slate-300 mb-3">Pusat Penguatan Karakter - Kemendikbudristek</p>
+                </div>
+                <!-- Job 11 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2024</div>
+                    <h3 class="text-xl font-bold">Tim Pengembang Kurikulum Bidang SD</h3>
+                    <p class="text-slate-300 mb-3">Dinas Pendidikan Provinsi DKI Jakarta</p>
+                </div>
+                <!-- Job 12 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2024</div>
+                    <h3 class="text-xl font-bold">Fasilitator Pendidikan Guru Penggerak Angkatan 11 Kota Semarang</h3>
+                    <p class="text-slate-300 mb-3">BBGP Jawa Tengah - Kemendikbudristek</p>
+                </div>
+                <!-- Job 13 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2025</div>
+                    <h3 class="text-xl font-bold">Kreator Media Pembelajaran Interaktif untuk Ruang Murid</h3>
+                    <p class="text-slate-300 mb-3">Direktorat SD - Kemendikdasmen</p>
+                </div>
+                <!-- Job 13 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2025</div>
+                    <h3 class="text-xl font-bold">Tim Teknis e-rapor 2025</h3>
+                    <p class="text-slate-300 mb-3">Direktorat SD - Kemendikdasmen</p>
+                </div>
+                <!-- Job 13 -->
+                <div class="relative pl-8 border-l-2 border-slate-800">
+                    <div class="absolute w-4 h-4 bg-slate-700 rounded-full -left-[9px] top-1"></div>
+                    <div class="mb-1 text-sm font-medium text-slate-500">2025</div>
+                    <h3 class="text-xl font-bold">Koordinator Kelas 6 Kelompok Kerja Guru Kelas</h3>
+                    <p class="text-slate-300 mb-3">Dinas Pendidikan Provinsi DKI Jakarta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-card rounded-3xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-12 bg-indigo-600">
+                        <h2 class="text-3xl font-bold mb-6">Mari Berkolaborasi</h2>
+                        <p class="text-indigo-100 mb-10">Saya selalu terbuka untuk mendiskusikan proyek baru, ide kreatif, atau peluang untuk menjadi bagian dari visi Anda.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <span>didikrahmadi@edu.jakarta.go.id</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <span>+62 812 8524 2527</span>
+                            </div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <span>Jakarta, Indonesia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-12">
+                        <form id="contact-form" name="submit-to-google-sheet" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-slate-400">Nama Lengkap</label>
+                                <input type="text" name="nama" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" placeholder="Tulis Nama Lengkap Anda">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-slate-400">Email</label>
+                                <input type="email" name="email" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" placeholder="email@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2 text-slate-400">Pesan</label>
+                                <textarea name="pesan" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 h-32 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" placeholder="Ceritakan ide Anda..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-bold transition">Kirim Pesan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 <a href="https://wa.me/6281285242527" target="_blank">Didik Rahmadi</a>. All rights reserved.</p>
+    <footer class="py-12 border-t border-slate-800 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.linkedin.com/in/didik-rahmadi-59b3a43b5/" class="text-slate-500 hover:text-indigo-400 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a href="#" class="text-slate-500 hover:text-indigo-400 transition"><i class="fab fa-github text-2xl"></i></a>
+                <a href="https://www.instagram.com/didik.rahmadi" class="text-slate-500 hover:text-indigo-400 transition"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="http://wa.me/6281285242527" class="text-slate-500 hover:text-emerald-400 transition"><i class="fab fa-whatsapp text-2xl"></i></a>
+            </div>
+            <p class="text-slate-500 text-sm">© 2024 Didik Rahmadi. Semua Hak Dilindungi.</p>
+        </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Form Submission ke Google Sheets
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby9RlWVAVtBg-K3AlPq7MB2Tok34F0oV62KlCxAayJ4BAAzjkOv9o4cnX0i0GZufeiKzQ/exec'; // Nanti ganti dengan URL Web App Apps Script Anda
+        const form = document.forms['submit-to-google-sheet'];
+        const btnSubmit = form.querySelector('button[type="submit"]');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Ubah teks tombol jadi loading
+            const originalText = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Mengirim...';
+            btnSubmit.disabled = true;
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    const notification = document.createElement('div');
+                    notification.className = 'fixed bottom-8 right-8 bg-emerald-500 text-white px-6 py-4 rounded-xl shadow-2xl z-50 animate-bounce';
+                    notification.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Pesan berhasil dikirim ke Google Sheet!';
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 3000);
+                    
+                    form.reset();
+                    btnSubmit.innerHTML = originalText;
+                    btnSubmit.disabled = false;
+                })
+                .catch(error => {
+                    console.error('Error!', error.message);
+                    alert('Gagal mengirim pesan. Pastikan URL Web App sudah benar.');
+                    btnSubmit.innerHTML = originalText;
+                    btnSubmit.disabled = false;
+                });
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
